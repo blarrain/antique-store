@@ -17,6 +17,13 @@ header {
 
 main {
     grid-area: main;
+
+    & .filter-area {
+        position: sticky;
+        top: 0;
+        background-color: #171717ee;
+        z-index: 99
+    }
 }
 
 footer {
@@ -156,12 +163,6 @@ header {
         height: 100vh;
         overflow: auto;
 
-        & .filter-area {
-            position: sticky;
-            top: 0;
-            background-color: #171717ee;
-            z-index: 99
-        }
     }
 
     .sm-hidden {
