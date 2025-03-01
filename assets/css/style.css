@@ -1,0 +1,158 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+img {
+    width: 100%
+}
+
+header {
+    grid-area: header;
+    border-bottom: 1px solid #ffffff;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+body {
+    grid-template-areas: "header" "main" "footer";
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #171717;
+    color: #fff
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+}
+
+.px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem
+}
+select {
+    margin:1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ffffff17;
+    background-color: #ffffff17;
+    color: #fff;
+    border-radius: 0.5rem;
+    & option {
+        background-color: #171717;
+    }
+}
+
+.card {
+    background-color: #ffffff05;
+    /* border-radius: 0.5rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden; */
+    border: 1px solid #ffffff17;
+
+    & img {
+        height: 50vh;
+        object-fit: cover;
+    }
+}
+.card:hover {
+    background: #ffffff17;
+    outline:1px solid #ffffff;
+    & img {filter: grayscale(1);}
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.price {font-weight: 400;}
+
+.hidden {
+    display: none;
+}
+
+.card-area {
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00000017;
+}
+
+@media (min-width: 576px) {
+    body {
+        grid-template-areas: "header main" "footer main";
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 90vh 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+
+        & ul {
+            list-style: none;
+
+            & li {
+                padding: 1rem;
+                margin: .5rem auto;
+                font-size: 1.5rem;
+                cursor: pointer;
+                width: 100%
+            }
+
+            & li:hover {
+                background-color: #ffffff17;
+            }
+        }
+    }
+
+    .card-area {
+        grid-template-columns: repeat(4, 1fr);
+        height:100vh;
+        overflow: auto;
+    }
+
+    .sm-hidden {
+        display: none!important;
+    }
+
+    .sm-column {
+        display: flex;
+        flex-direction: column;
+    }
+    .card img {
+        height: 30vh;
+    }
+}
